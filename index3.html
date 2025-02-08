@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Styling and JavaScript</title>
+    <link rel="stylesheet" href="styles3.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#responsive-layout">Responsive Layout</a></li>
+            <li><a href="#interactive-quiz">Interactive Quiz</a></li>
+            <li><a href="#fetch-data">Fetch Data</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h2>"Welcome to Advanced Styling and JavaScript"</h2>
+    </header>
+    <main>
+        <section id="home">
+            <h2>Home</h2>
+            <p>This website demonstrates responsive design techniques.</p>
+            <button onclick="openExternalPage('https://developer.mozilla.org/en-US/docs/Learn/CSS')">Learn CSS</button>
+        </section>
+        <section id="responsive-layout">
+            <h2>Responsive Layout</h2>
+            <p>Resize the browser window to see the layout adjust.</p>
+            <button onclick="openExternalPage('https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries',)">Media Queries Guide</button>
+        </section>
+        <section id="interactive-quiz">
+            <h2>Interactive Quiz</h2>
+            <p>A fun quiz to test your knowledge.</p>
+            <button onclick="openExternalPage('file:///E:/apex%20planet/TASK%203/quiz.html')">Take a JavaScript Quiz</button>
+        </section>
+        <section id="fetch-data">
+            <h2>Fetch Data</h2>
+            <p>Click the button to fetch a random joke from an API.</p>
+            <button onclick="fetchJoke()">Get a Joke</button>
+            <p id="joke"></p>
+        </section>
+    </main>
+    <script>
+        function openExternalPage(url) {
+            window.open(url, '_blank');
+        }
+
+        function fetchJoke() {
+            fetch('https://api.chucknorris.io/jokes/random') // Public Joke API
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('joke').textContent = data.value;
+                })
+                .catch(error => {
+                    document.getElementById('joke').textContent = 'Failed to load joke. Try again!';
+                    console.error('Error fetching joke:', error);
+                });
+        }
+    </script>
+</body>
+</html>

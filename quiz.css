@@ -1,0 +1,85 @@
+ /* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #222; /* Simple dark background */
+    color: #fff;
+    padding: 20px;
+}
+
+/* Quiz Styling */
+#quiz-container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    width: 50%;
+    margin-top: 20px;
+}
+
+.option-btn {
+    display: block;
+    width: 80%;
+    padding: 10px;
+    margin: 5px auto;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.option-btn:hover {
+    background: #007BFF;
+    color: #fff;
+}
+
+.correct {
+    background: #28a745;
+    color: white;
+}
+
+.wrong {
+    background: #dc3545;
+    color: white;
+}
+
+#next-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+#next-btn:hover {
+    background: #0056b3;
+}
+
+/* Timer */
+#timer {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: yellow;
+}
+
+/* Image Carousel */
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.carousel img {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
